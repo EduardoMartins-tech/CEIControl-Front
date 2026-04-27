@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CEIControl</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assests/ceicontrol.png">
+    <script defer src="dashboard.js"></script>
+</head>
+<body class="bg-auth">
+    <div class="auth-split-wrapper">
+        <div class="auth-side-form">
+            <div class="auth-container">
+                <header class="auth-header">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <a href="index.html" class="logo-text">CEIControl®</a>
+                        <div class="theme-switch-wrapper" style="margin-top:0;border-top:none;padding:0;">
+                            <i class="fa-solid fa-sun theme-icon-sm"></i>
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox" onclick="toggleDarkMode()"/>
+                                <div class="slider round"></div>
+                            </label>
+                            <i class="fa-solid fa-moon theme-icon-sm"></i>
+                        </div>
+                    </div>
+                </header>
+                <main class="auth-card">
+                    <h2>Entrar no Sistema</h2>
+                    <p class="subtitle">Bem-vindo de volta! Insira os seus dados para aceder ao painel.</p>
+                    <div id="erro-login" class="error-msg" style="display:none;">E-mail, senha ou perfil inválidos.</div>
+                    <div class="auth-form">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" placeholder="••••••••" required>
+                        <label for="perfil">Perfil de Acesso</label>
+                        <select id="perfil" required>
+                            <option value="" disabled selected>Selecione o seu perfil</option>
+                            <option value="admin">Gestor Escolar</option>
+                            <option value="cliente">Responsável/Pais</option>
+                            <option value="usuario">Educador/Professor</option>
+                        </select>
+                        <button type="button" onclick="fazerLogin()" class="btn-black-full" style="width:100%;margin-top:8px;justify-content:center;">
+                            Entrar na plataforma
+                        </button>
+                    </div>
+                    <footer class="auth-footer">
+                        <p>Credenciais de demonstração:<br>
+                        <strong>admin@cei.com</strong> / <strong>12345</strong></p>
+                    </footer>
+                </main>
+            </div>
+        </div>
+        <div class="auth-side-visual">
+            <div class="visual-content">
+                <h2>Gestão inteligente para uma educação transformadora.</h2>
+                <p>Centralize processos, economize tempo e foque no desenvolvimento dos seus alunos com a tecnologia da JEMTech.</p>
+                <div class="visual-footer">
+                    <img src="assests/logo_jemtech.png" alt="Logo JEMTech" class="footer-logo">
+                    <img src="assests/logo_fatec.jpg" alt="Logo FATEC" class="footer-logo">
+                    <div class="footer-text"><span>Powered by JEMTech & FATEC</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

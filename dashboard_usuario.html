@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Sala - CEIControl</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assests/ceicontrol.png">
+    <script defer src="script.js"></script>
+    <script defer src="dashboard.js"></script>
+</head>
+<body class="dashboard-body">
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-text">CEIControl®</span>
+            <button class="sidebar-close-btn" onclick="toggleSidebar()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <p class="nav-category">Principal</p>
+            <a href="#" onclick="mostrarSecao('dashboard')" id="nav-dashboard" class="active">
+                <i class="fa-solid fa-chalkboard-user"></i> Minha Sala
+            </a>
+            <p class="nav-category">Rotina</p>
+            <a href="#" onclick="mostrarSecao('agenda')" id="nav-agenda">
+                <i class="fa-solid fa-calendar-check"></i> Agenda Escolar
+            </a>
+            <a href="#" onclick="mostrarSecao('materiais')" id="nav-materiais">
+                <i class="fa-solid fa-box-archive"></i> Materiais
+            </a>
+            <p class="nav-category">Sistema</p>
+            <a href="#" onclick="mostrarSecao('comunicacao')" id="nav-comunicacao">
+                <i class="fa-solid fa-comments"></i> Comunicação
+            </a>
+            <a href="login.html" class="logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i> Sair
+            </a>
+        </nav>
+        <div class="theme-switch-wrapper">
+            <i class="fa-solid fa-sun theme-icon-sm"></i>
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" onclick="toggleDarkMode()"/>
+                <div class="slider round"></div>
+            </label>
+            <i class="fa-solid fa-moon theme-icon-sm"></i>
+        </div>
+    </aside>
+
+    <!-- TOPBAR MOBILE -->
+    <div class="mobile-topbar">
+        <span class="logo-text">CEIControl®</span>
+        <button class="hamburger-btn" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <main class="main-content">
+
+        <!-- DASHBOARD HOME -->
+        <section id="secao-dashboard" class="dash-secao">
+            <header class="dash-header">
+                <div class="header-welcome">
+                    <h1>Minha Sala</h1>
+                    <p>Olá, Educador! Bem-vindo ao seu painel.</p>
+                </div>
+                <div class="avatar-circle">JE</div>
+            </header>
+            <div class="content-wrapper">
+                <div class="grid-funcionalidades">
+                    <div class="admin-card">
+                        <div class="card-icon" style="background:#ebf4ff;color:#4a90e2;">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Agenda Escolar</h3>
+                            <p>Visualize eventos e atividades da CEI.</p>
+                            <div class="card-actions">
+                                <a href="#" onclick="mostrarSecao('agenda')" class="btn-sm primary">Ver Agenda</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="card-icon" style="background:#ebf4ff;color:#4a90e2;">
+                            <i class="fa-solid fa-box-archive"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Materiais</h3>
+                            <p>Consulte o estoque de materiais disponíveis.</p>
+                            <div class="card-actions">
+                                <a href="#" onclick="mostrarSecao('materiais')" class="btn-sm primary">Ver Materiais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="card-icon" style="background:#ebf4ff;color:#4a90e2;">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Comunicação</h3>
+                            <p>Converse com a coordenação e responsáveis.</p>
+                            <div class="card-actions">
+                                <a href="#" onclick="mostrarSecao('comunicacao')" class="btn-sm primary">Abrir Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AGENDA -->
+        <section id="secao-agenda" class="dash-secao" style="display:none;">
+            <header class="dash-header">
+                <div class="header-welcome">
+                    <h1>Agenda Escolar</h1>
+                    <p>Visualize todos os eventos e atividades da CEI.</p>
+                </div>
+            </header>
+            <div class="content-wrapper">
+                <div class="table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Título</th>
+                                <th>Local</th>
+                                <th>Público</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-agenda-usuario"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- MATERIAIS -->
+        <section id="secao-materiais" class="dash-secao" style="display:none;">
+            <header class="dash-header">
+                <div class="header-welcome">
+                    <h1>Materiais</h1>
+                    <p>Consulte o estoque de materiais disponíveis.</p>
+                </div>
+            </header>
+            <div class="content-wrapper">
+                <div class="table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Preço Unit.</th>
+                                <th>Quantidade</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-materiais"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMUNICAÇÃO -->
+        <section id="secao-comunicacao" class="dash-secao" style="display:none;">
+            <header class="dash-header">
+                <div class="header-welcome">
+                    <h1>Comunicação</h1>
+                    <p>Chat interno entre os usuários do sistema.</p>
+                </div>
+            </header>
+            <div class="content-wrapper" style="padding:0;">
+                <div class="chat-container" style="margin:20px;">
+                    <aside class="chat-sidebar">
+                        <div class="chat-search">
+                            <h3>Conversas</h3>
+                            <div class="search-box">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Pesquisar...">
+                            </div>
+                        </div>
+                        <ul class="contacts-list">
+                            <li class="contact-item active" onclick="selecionarContato('Eduardo Admin', this)">
+                                <div class="avatar-icon"><i class="fa-solid fa-user"></i></div>
+                                <div class="contact-info"><h4>Eduardo Admin</h4><p>Gestor</p></div>
+                            </li>
+                            <li class="contact-item" onclick="selecionarContato('Fernanda Responsável', this)">
+                                <div class="avatar-icon"><i class="fa-solid fa-user"></i></div>
+                                <div class="contact-info"><h4>Fernanda Responsável</h4><p>Cliente</p></div>
+                            </li>
+                        </ul>
+                    </aside>
+                    <section class="chat-window">
+                        <header class="chat-header">
+                            <div class="user-details">
+                                <div class="avatar-icon"><i class="fa-solid fa-user"></i></div>
+                                <div>
+                                    <h4 id="chat-contato-nome">Eduardo Admin</h4>
+                                    <span>Online Agora</span>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message received"><p>Olá Educador! Precisa de algo?</p></div>
+                            <div class="message sent"><p>Oi! Só verificando a agenda da semana.</p></div>
+                        </div>
+                        <footer class="chat-input-area">
+                            <div class="input-wrapper">
+                                <input type="text" id="chat-input" placeholder="Digite sua mensagem..." onkeypress="if(event.key==='Enter')enviarMensagem()">
+                                <div class="input-icons">
+                                    <button onclick="enviarMensagem()" class="send-btn">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </footer>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+</body>
+</html>

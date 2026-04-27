@@ -1,0 +1,458 @@
+/* ============================================================
+   MOBILE.CSS — CEIControl
+   Responsividade para dispositivos móveis e tablets
+   ============================================================ */
+
+/* --- TOPBAR MOBILE (hamburguer) --- */
+.mobile-topbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-topbar .logo-text {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary-green) !important;
+}
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+}
+
+.sidebar-close-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--text-main);
+    cursor: pointer;
+    margin-left: auto;
+    padding: 4px;
+}
+
+/* --- OVERLAY escuro ao abrir sidebar --- */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* ============================================================
+   TABLET — 769px até 1024px
+   ============================================================ */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .sidebar {
+        width: 200px;
+        min-width: 200px;
+        padding: 18px;
+    }
+
+    .content-wrapper {
+        padding: 24px;
+    }
+
+    .dash-header {
+        padding: 15px 24px;
+    }
+
+    /* Chat: esconde painel de perfil lateral */
+    .chat-profile-info {
+        display: none;
+    }
+
+    .chat-container {
+        margin: 12px;
+    }
+
+    /* Grid de cards em 2 colunas */
+    .grid-funcionalidades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================
+   MOBILE — até 768px
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* --- TOPBAR VISÍVEL --- */
+    .mobile-topbar {
+        display: flex;
+    }
+
+    /* --- SIDEBAR VIRA DRAWER LATERAL --- */
+    .sidebar {
+        position: fixed !important;
+        top: 0;
+        left: -280px;
+        width: 260px !important;
+        min-width: 260px !important;
+        height: 100vh !important;
+        z-index: 999;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.2);
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .sidebar-close-btn {
+        display: block;
+    }
+
+    .sidebar-logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* --- DASHBOARD CONTAINER --- */
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    /* Main content com espaço pro topbar fixo */
+    .main-content {
+        margin-top: 56px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* --- HEADER DO DASHBOARD --- */
+    .dash-header {
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .dash-header .btn-black-full,
+    .dash-header .btn-sm,
+    .dash-header > a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .dash-header > div[style*="flex"] {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    /* --- CONTENT WRAPPER --- */
+    .content-wrapper {
+        padding: 16px;
+    }
+
+    .content-wrapper-centered {
+        padding: 16px;
+    }
+
+    /* --- CARDS DO PAINEL ADMIN --- */
+    .grid-funcionalidades {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .admin-card {
+        flex-direction: row;
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        font-size: 1.4rem;
+        border-radius: 10px;
+    }
+
+    .card-info p {
+        margin-bottom: 12px;
+        font-size: 0.85rem;
+    }
+
+    .card-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .card-actions a {
+        flex: 1;
+        min-width: 100px;
+        justify-content: center;
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+
+    /* --- TABELAS --- */
+    .table-container {
+        border-radius: 12px;
+        padding: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .full-width-card {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 12px;
+    }
+
+    .custom-table {
+        min-width: 480px;
+        font-size: 0.85rem;
+    }
+
+    .custom-table th,
+    .custom-table td {
+        padding: 10px 12px;
+    }
+
+    /* --- FORMULÁRIOS --- */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-card-centered {
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+
+    .admin-card[style*="max-width"] {
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* --- BOTÕES DE AÇÃO --- */
+    .btn-black-full {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+
+    /* ============================================================
+       LANDING PAGE — Mobile
+       ============================================================ */
+
+    /* Navbar */
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .flex-nav {
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo-area span {
+        font-size: 1rem;
+    }
+
+    .nav-auth {
+        gap: 6px;
+    }
+
+    .btn-cadastre,
+    .btn-login {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* Hero */
+    .hero-green {
+        padding: 36px 0 40px;
+        min-height: auto;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+        min-height: auto;
+        margin-bottom: 12px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-visual {
+        height: 200px;
+        border-radius: 8px;
+    }
+
+    /* Funcionalidades */
+    .features-white {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* Contato */
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Sobre */
+    .about-hero {
+        padding: 60px 0;
+    }
+
+    .mvv-grid {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+    }
+
+    .ods-detailed-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    /* ============================================================
+       LOGIN — Mobile
+       ============================================================ */
+    .auth-side-visual {
+        display: none;
+    }
+
+    .auth-side-form {
+        padding: 30px 20px;
+        align-items: flex-start;
+    }
+
+    .auth-container {
+        max-width: 100%;
+    }
+
+    .auth-card h2 {
+        font-size: 1.4rem;
+    }
+
+    /* ============================================================
+       CHAT — Mobile
+       ============================================================ */
+    .chat-container {
+        flex-direction: column;
+        height: auto;
+        min-height: calc(100vh - 56px);
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .chat-sidebar {
+        width: 100% !important;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .chat-search h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .chat-window {
+        flex: 1;
+        min-height: 50vh;
+    }
+
+    .chat-messages {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .chat-profile-info {
+        display: none;
+    }
+
+    .chat-input-area {
+        padding: 12px 16px;
+    }
+
+    .chat-main {
+        padding: 0 !important;
+    }
+
+    .message {
+        max-width: 85%;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================================
+   MOBILE PEQUENO — até 400px
+   ============================================================ */
+@media (max-width: 400px) {
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ods-detailed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-actions {
+        flex-direction: column;
+    }
+
+    .card-actions a {
+        width: 100%;
+    }
+}

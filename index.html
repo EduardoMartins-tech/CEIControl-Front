@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEIControl - Sistema de Gestão CEI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assests/ceicontrol.png">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container flex-nav">
+            <div class="logo-area">
+                <div class="logo-circle">
+                    <img src="assests/ceicontrol.png" alt="Logo">
+                </div>
+                <span class="logo-text">Sistema de Gestão CEI</span>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <div class="theme-switch-wrapper">
+                        <i class="fa-solid fa-sun theme-icon-sm"></i>
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" onclick="toggleDarkMode()" />
+                            <div class="slider round"></div>
+                        </label>
+                        <i class="fa-solid fa-moon theme-icon-sm"></i>
+                    </div>
+                    <a href="login.html" class="btn-cadastre">Cadastre-se</a>
+                    <a href="login.html" class="btn-login">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-green">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <div class="carousel-container">
+                        <div class="carousel-item active">
+                            <h1>Simplifique a Gestão da Sua CEI Pública</h1>
+                            <p>A solução integrada que centraliza fornecedores, agendas e comunicação com os pais.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h1>Comunicação Direta e Segura</h1>
+                            <p>Conecte a coordenação pedagógica aos responsáveis em tempo real via chat.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h1>Controle Total de Recursos</h1>
+                            <p>Gerencie estoques, produtos e fornecedores de forma digital e eficiente.</p>
+                        </div>
+                    </div>
+                    <a href="sobre.html" class="btn-black">Saiba Mais</a>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="carousel-images">
+                        <img src="assests/image_8cc384.jpg" class="c-img active" alt="Slide 1">
+                        <img src="assests/image_8cca12.jpg" class="c-img" alt="Slide 2">
+                        <img src="assests/istockphoto-998670532-2048x2048.jpg" class="c-img" alt="Slide 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="funcionalidades" class="features-white">
+            <div class="container">
+                <h2 class="section-title">Nossas Funcionalidades Principais</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="icon-box">📦</div>
+                        <h3>Gestão de Fornecedores</h3>
+                        <p>Centralize contatos e informações estratégicas.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box">📅</div>
+                        <h3>Agenda Inteligente</h3>
+                        <p>Organize eventos, reuniões e rotinas escolares.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box">💬</div>
+                        <h3>Comunicação com Pais</h3>
+                        <p>Envie avisos e convites de forma rápida e fácil.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box">🔗</div>
+                        <h3>Integração Total</h3>
+                        <p>Consolide suas ferramentas em um único lugar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contact-section">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <h2>Chamada para Parceria</h2>
+                    <p>Gostaria de saber mais ou se tornar nosso parceiro? Entre em contato agora.</p>
+                </div>
+                <form class="contact-form" onsubmit="enviarContato(event)">
+                    <input type="text" id="contato-nome" placeholder="Nome completo" required>
+                    <input type="email" id="contato-email" placeholder="E-mail institucional" required>
+                    <textarea id="contato-msg" placeholder="Sua mensagem..." rows="4" required></textarea>
+                    <button type="submit" class="btn-black">Enviar Mensagem</button>
+                    <p id="contato-ok" style="display:none;color:#00a98f;margin-top:10px;font-weight:600;">
+                        <i class="fa-solid fa-circle-check"></i> Mensagem enviada com sucesso!
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-simple">
+        <div class="container">
+            <p>© 2025 JEMTech | Sistema de Gestão CEI</p>
+        </div>
+    </footer>
+
+    <script>
+        function enviarContato(e) {
+            e.preventDefault();
+            document.getElementById('contato-ok').style.display = 'block';
+            document.getElementById('contato-nome').value = '';
+            document.getElementById('contato-email').value = '';
+            document.getElementById('contato-msg').value = '';
+        }
+    </script>
+
+</body>
+</html>

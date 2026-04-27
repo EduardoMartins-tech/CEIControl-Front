@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - CEIControl</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assests/ceicontrol.png">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container flex-nav">
+            <div class="logo-area">
+                <div class="logo-circle">
+                    <img src="assests/ceicontrol.png" alt="Logo">
+                </div>
+                <span class="logo-text">Sistema de Gestão CEI</span>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <div class="theme-switch-wrapper">
+                        <i class="fa-solid fa-sun theme-icon-sm"></i>
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" onclick="toggleDarkMode()" />
+                            <div class="slider round"></div>
+                        </label>
+                        <i class="fa-solid fa-moon theme-icon-sm"></i>
+                    </div>
+                    <a href="login.html" class="btn-cadastre">Cadastre-se</a>
+                    <a href="login.html" class="btn-login">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container text-center">
+                <h1>Sobre a JEM Tech</h1>
+                <p>Cuidar das crianças começa com cuidar de quem as educa.</p>
+            </div>
+        </section>
+
+        <section class="mvv-section">
+            <div class="container">
+                <div class="mvv-grid">
+                    <div class="mvv-card">
+                        <div class="mvv-icon">🎯</div>
+                        <h3>Nossa Missão</h3>
+                        <p>Democratizar o acesso à tecnologia de gestão, fornecendo plataformas gratuitas e robustas para a gestão pública escolar.</p>
+                    </div>
+                    <div class="mvv-card">
+                        <div class="mvv-icon">👁️</div>
+                        <h3>Nossa Visão</h3>
+                        <p>Ser a principal referência em inovação para o setor público, conectando tecnologia e educação de forma humana.</p>
+                    </div>
+                    <div class="mvv-card">
+                        <div class="mvv-icon">💎</div>
+                        <h3>Nossos Valores</h3>
+                        <p>Inovação constante, transparência absoluta, segurança de dados e compromisso com o impacto social.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ods" class="ods-section-page">
+            <div class="container">
+                <h2 class="section-title">Compromisso Sustentável (ODS)</h2>
+                <div class="ods-detailed-grid">
+                    <div class="ods-card-item">
+                        <div class="ods-img-container"><img src="assests/ods4.png" alt="ODS 4"></div>
+                        <div class="ods-info">
+                            <h4>ODS 4 - Educação de Qualidade</h4>
+                            <p>Garantir educação inclusiva e promover oportunidades de aprendizado.</p>
+                        </div>
+                    </div>
+                    <div class="ods-card-item">
+                        <div class="ods-img-container"><img src="assests/ods9.png" alt="ODS 9"></div>
+                        <div class="ods-info">
+                            <h4>ODS 9 - Inovação e Infraestrutura</h4>
+                            <p>Fomentar a inovação tecnológica em instituições públicas.</p>
+                        </div>
+                    </div>
+                    <div class="ods-card-item">
+                        <div class="ods-img-container"><img src="assests/ods10.jpg" alt="ODS 10"></div>
+                        <div class="ods-info">
+                            <h4>ODS 10 - Redução das Desigualdades</h4>
+                            <p>Democratizar o acesso a ferramentas de gestão escolar.</p>
+                        </div>
+                    </div>
+                    <div class="ods-card-item">
+                        <div class="ods-img-container"><img src="assests/ods17.png" alt="ODS 17"></div>
+                        <div class="ods-info">
+                            <h4>ODS 17 - Parcerias e Implementação</h4>
+                            <p>Fortalecer parcerias para o desenvolvimento sustentável.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-simple">
+        <div class="container">
+            <p>© 2025 JEMTech | CEIControl</p>
+        </div>
+    </footer>
+
+</body>
+</html>
