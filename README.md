@@ -40,8 +40,8 @@ A proposta é centralizar em um único sistema:
 
 ## 📎 Links do Projeto
 
-* **🌐 Deploy Online (Front-End):** [https://eduardomartins-tech.github.io/CEIControl-Alpha-0.3](https://eduardomartins-tech.github.io/CEIControl-Alpha-0.3)
-* **🌐 Deploy Online (Full-Stack):** [https://ceicontrol.up.railway.app](https://ceicontrol.up.railway.app)
+* **🌐 Deploy Online (Front-End):** [Vizualizar Front-End](https://eduardomartins-tech.github.io/CEIControl-Front/)
+* **🌐 Deploy Online (Full-Stack):** [Vizualizar FullStack](https://ceicontrol.up.railway.app)
 * **Repositório Oficial (Alpha 0.3):** [GitHub - CEIControl Alpha 0.3](https://github.com/EduardoMartins-tech/CEIControl-Alpha-0.3)
 * **Wireframe e Protótipo:** [Visualizar Protótipo no Figma](https://www.figma.com/design/Ik8DcPkOuDatNVvMvnUDYq/CCsite?node-id=0-1&p=f)
 
